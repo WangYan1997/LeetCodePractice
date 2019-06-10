@@ -15,11 +15,13 @@ class Solution {
 			if (root.val == val) {
 				t = root;
 			}
-			if(t == null){
-				t = searchBST(root.left, val);
-			}
-			if(t == null) {
-				t = searchBST(root.right, val);
+			else {
+				if (val < root.val) {
+					t = searchBST(root.left, val);
+				}
+				else{
+					t = searchBST(root.right, val);
+				}
 			}
 		}
 		return t;
