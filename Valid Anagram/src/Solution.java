@@ -1,27 +1,23 @@
 class Solution {
-	public boolean isAnagram(String s, String t) {
-		int lengthofs = s.length();
-		int lengthoft = t.length();
+		public boolean isAnagram(String s, String t) {
 		
-		if(lengthofs != lengthoft) {
+        int Ls = s.length();
+        int Lt = t.length();
+		if(Ls != Lt) {
 			return false;
 		}
 		
-		int[] chs = new int[26];
-		int[] cht = new int[26];
+		int[] ch = new int[26];
 		
-		for(int i = 0; i < lengthofs; i++) {
-			chs[s.charAt(i) - 'a']++;
+		for(int i = 0; i < Ls; i++) {
+			ch[s.charAt(i) - 'a']++;
 		}
 		
-		for(int i = 0; i < lengthoft; i++) {
-			cht[t.charAt(i) - 'a']++;
-		}
-		
-		for(int i = 0; i < 26; i++) {
-			if(chs[i] != cht[i]) {
-				return false;
-			}
+		for(int i = 0; i < Lt; i++) {
+			ch[t.charAt(i) - 'a']--;
+            if(ch[t.charAt(i) - 'a'] < 0){
+                return false;
+            } 
 		}
 		
 		return true;
