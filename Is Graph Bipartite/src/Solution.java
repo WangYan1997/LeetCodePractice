@@ -32,6 +32,7 @@ public class Solution {
 				dfs(graph, w);
 			} else if (color[w] == color[v]) {
 				isTwoColorable = false;
+				return;
 			}
 		}
 	}
