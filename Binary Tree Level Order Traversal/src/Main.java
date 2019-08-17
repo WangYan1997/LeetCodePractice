@@ -4,7 +4,8 @@ public class Main {
 	public static final int NULL = -1;
 	
 	public static void main(String[] args) {
-		int[] input = {3, 9, 20, NULL, NULL, 15, 7};
+//		int[] input = {3, 9, 20, NULL, NULL, 15, 7};
+		int[] input = {1, NULL, 2, 3};
 		
 		TreeNode root = Tree(input);
 		
