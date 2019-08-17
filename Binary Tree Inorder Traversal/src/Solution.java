@@ -7,15 +7,15 @@ public class Solution {
 
 		Stack<TreeNode> stack = new Stack<>();
 
-		TreeNode cur = root;
-		while (!stack.isEmpty() || cur != null) {
-			while (cur != null) {
-				stack.push(cur);
-				cur = cur.left;
+		TreeNode curr = root;
+		while (!stack.isEmpty() || curr != null) {
+			while (curr != null) {
+				stack.push(curr);
+				curr = curr.left;
 			}
-			cur = stack.pop();
-			ans.add(cur.val);
-			cur = cur.right;
+			curr = stack.pop();
+			ans.add(curr.val);
+			curr = curr.right;
 
 		}
 
