@@ -5,11 +5,19 @@ public class Solution {
         Set<String> normalized = new HashSet<>();
         
         for(String email : emails) {
-        	//parts = local name + domain name 
-        	String[] parts = email.split("@");
-        	String[] local = parts[0].split("\\+");
-        	local[0] = local[0].replace(".", "");
-        	normalized.add(local[0] + "@" + parts[1]);
+        	StringBuffer local = new StringBuffer();
+        	for(char ch : email.toCharArray()) {
+        		if(ch == '+' || ch == '@') {
+        			break;
+        		}
+        		if(ch == '.') {
+        			continue;
+        		}
+        		local.append(ch);
+        	}
+        	
+        	String address = local.toString() + email.substring(email.indexOf('@'));
+        	normalized.add(address);
         }
         
         return normalized.size();
