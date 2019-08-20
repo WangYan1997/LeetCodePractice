@@ -3,8 +3,12 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[][] times = {{2,1,1},{2,3,1},{3,4,1}};
-		int N = 4;
+//		int[][] times = {{2,1,1},{2,3,1},{3,4,1}};
+//		int N = 4;
+//		int K = 2;
+		
+		int[][] times = {{1,2,1}};
+		int N = 2;
 		int K = 2;
 		
 		
