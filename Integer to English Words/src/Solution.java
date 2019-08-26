@@ -14,10 +14,9 @@ public class Solution {
 		String str = new String();
 
 		for (int i = 3; i >= 0; i--) {
-			str = str + helper(num / (int) Math.pow(1000, i));
-
-			if (num / (int) Math.pow(1000, i) > 0) {
-				str = str + " " + THOUSANDS[i] + " ";
+			int temp = num / (int) Math.pow(1000, i);
+			if (temp > 0) {
+				str = str + helper(temp) + " " + THOUSANDS[i] + " ";
 			}
 
 			num = num % (int) Math.pow(1000, i);
@@ -29,11 +28,7 @@ public class Solution {
 	private String helper(int num) {
 		String str = new String();
 
-		if (num >= 1000 || num == 0) {
-			return "";
-		}
-
-		if (num > 0 && num < 20) {
+		if (num >= 0 && num < 20) {
 			str = LESS_THAN_20[num];
 		} else if (num >= 20 && num < 100) {
 			str = TENS[num / 10] + " " + helper(num % 10);
